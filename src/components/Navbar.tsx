@@ -44,7 +44,7 @@ const Navbar = () => {
             }}
           >
             <Button variant="ghost">
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </Button>
             <Button variant="ghost">
               <Link to="/signup">Sign up</Link>

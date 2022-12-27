@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Focus from "../components/Focus";
-import List from "../components/List";
+import TaskList from "../components/TaskList";
 import MainLayout from "../components/MainLayout";
 import SignIn from "../Pages/SignIn";
 import SignUP from "../Pages/SignUP";
@@ -12,11 +12,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <List></List>,
+        element: <TaskList></TaskList>,
       },
       {
         path: "/list",
-        element: <List></List>,
+        element: <TaskList></TaskList>,
       },
       {
         path: "/focus",
