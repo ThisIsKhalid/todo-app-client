@@ -18,7 +18,7 @@ const TodoItem = ({ item, deleteTodo, complete }: TodoItemProps) => {
   const [showDeleteBtn, setShowDeleteBtn] = useState(false);
   return (
     <Box
-      backgroundColor="gray.100"
+      backgroundColor="gray.900"
       px="5"
       py="2"
       borderRadius="5"
@@ -27,18 +27,21 @@ const TodoItem = ({ item, deleteTodo, complete }: TodoItemProps) => {
     >
       <Flex alignItems="center" justifyContent="space-between">
         <Checkbox
-          isInvalid
-          checked={item.isCompleted}
+          colorScheme="green"
+          isChecked={item.isCompleted}
+          // checked={item.isCompleted}
           onChange={() => complete(item.id)}
         >
           {item.isCompleted ? (
-            <Text fontSize="lg" textDecoration='line-through'>{item.text}</Text>
+            <Text color='white' fontSize="lg" textDecoration="line-through">
+              {item.text}
+            </Text>
           ) : (
-            <Text fontSize="lg">{item.text}</Text>
+            <Text color='white' fontSize="lg">{item.text}</Text>
           )}
         </Checkbox>
         {showDeleteBtn && (
-          <AiOutlineDelete onClick={() => deleteTodo(item.id)} color="red" />
+          <AiOutlineDelete onClick={() => deleteTodo(item.id)} color="white" />
         )}
       </Flex>
     </Box>

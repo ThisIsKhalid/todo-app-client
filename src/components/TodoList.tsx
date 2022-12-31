@@ -58,7 +58,13 @@ const TodoList = () => {
   };
 
   return (
-    <Container maxW="container.sm" border="1px solid red">
+    <Container
+    mt='10'
+      maxW="container.sm"
+      backgroundColor="gray.200"
+      p="10"
+      borderRadius='10'
+    >
       <Stack spacing="5">
         <Box>
           <Heading>ToDo</Heading>

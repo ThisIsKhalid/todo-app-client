@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import Focus from "../components/Focus";
 import MainLayout from "../components/MainLayout";
 import TodoList from "../components/TodoList";
 import SignIn from "../Pages/SignIn";
@@ -17,10 +16,6 @@ export const router = createBrowserRouter([
       {
         path: "/list",
         element: <TodoList></TodoList>,
-      },
-      {
-        path: "/focus",
-        element: <Focus></Focus>,
       },
       {
         path: "/signup",

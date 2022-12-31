@@ -16,6 +16,8 @@ const TodoNew = ({ createTodo }: TodoNewProps) => {
   return (
     <form onSubmit={handleSubmit}>
       <Input
+        focusBorderColor="teal.300"
+        borderColor="black"
         type="text"
         value={todoText}
         placeholder="New Task"
