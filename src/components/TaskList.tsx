@@ -5,6 +5,7 @@ import { useState } from "react";
 type Task = {
   id: string;
   label: string;
+  isCompleted: boolean;
 };
 
 const TaskList = () => {
@@ -16,10 +17,17 @@ const TaskList = () => {
   };
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" && newTask !== "") {
-      setTasks((task) => [...task, { id: nanoid(), label: newTask }]);
+      setTasks((task) => [
+        ...task,
+        { id: nanoid(), label: newTask, isCompleted: false},
+      ]);
       setNewTask("");
     }
   };
+
+  const handleCheckbox = (task: Task) => {
+    console.log('clck');
+  }
 
   return (
     <Container maxW="container.md" border="1px solid red">
@@ -27,7 +35,15 @@ const TaskList = () => {
         <Box w="container.sm" border="1px solid green" p="5">
           <List fontSize="xl">
             {tasks.map((task) => (
-              <ListItem key={task.id}>{task.label}</ListItem>
+              <Flex key={task.id} gap="2" alignItems="center">
+                <input
+                  type="checkbox"
+                  style={{ width: "20px", height: "20px" }}
+                  checked={task.isCompleted}
+                  onChange={() => handleCheckbox(task)}
+                />
+                <ListItem>{task.label}</ListItem>
+              </Flex>
             ))}
           </List>
           <Input
